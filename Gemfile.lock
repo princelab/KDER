@@ -1,10 +1,15 @@
+GIT
+  remote: https://github.com/princelab/distribution.git
+  revision: 159cac960557e0249a215345c2931e20ac75f774
+  specs:
+    distribution (0.7.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
-    distribution (0.7.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  distribution (~> 0.7)
+  distribution (= 0.7.0)!

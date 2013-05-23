@@ -1,0 +1,10 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    distribution (0.7.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  distribution (~> 0.7)

@@ -11,9 +11,9 @@ task :version
 # extracted from https://github.com/grosser/project_template
 # as found on https://gist.github.com/grosser/1261469
 rule /^version:bump:.*/ do |t|
-  sh "git status | grep 'nothing to commit'" # ensure we are not dirty
+  `git status | grep 'nothing to commit'` # ensure we are not dirty
   index = ['major', 'minor','patch'].index(t.name.split(':').last)
-  file = 'lib/GEM_NAME/version.rb'
+  file = 'lib/kder/version.rb'
  
   version_file = File.read(file)
   old_version, *version_parts = version_file.match(/(\d+)\.(\d+)\.(\d+)/).to_a

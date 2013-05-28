@@ -6,6 +6,7 @@ class Kder
   Sigmas = 2.5 
   MeshCount = 2e3
   MinimumThresholdValue = 1e-2
+  MinimumStepSize = 1e-3
   class << self
     ## 
     # :singleton-method: kde
@@ -18,7 +19,8 @@ class Kder
       # Initialization steps
       min = arr.min - bw*opts[:sigmas]
       max = arr.max + bw*opts[:sigmas]
-      step_size = (max-min)/opts[:sampling_density].to_f
+      step_size = (max-min)/(opts[:sampling_density].to_f)
+      step_size = step_size < MinimumStepSize ? MinimumStepSize : step_size
       arr.sort!
       # Step through the range
       output = (min..max).step(step_size).map do |mid|

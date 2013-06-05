@@ -18,13 +18,15 @@ describe Kder do
       time = Time.now
       resp = Kder.kde @test_arr
       puts "Time passed: #{Time.now - time}"
+      p resp
     end
     it "PROFILES a KDE for an array of #{@times}" do 
+      pending
       @test_arr = @size.times.map{ rand(100)}
       result = RubyProf.profile do 
         resp = Kder.kde @test_arr
       end
-      file = "ruby_profile_kde.html"
+      file = "ruby_profile_kde_#{Time.now.to_i}.html"
       File.open(file, 'w') do |io|
         printer = RubyProf::GraphHtmlPrinter.new(result)
         printer.print(io, {})

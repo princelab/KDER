@@ -15,5 +15,16 @@ describe Kder do
     resp.size.should eq(2)
     # TODO expand the tests
   end
+  context "Singlular value cases" do 
+    before(:each) do
+      @source = Array.new(20,2.0)
+      @result = Kder.kde(@source)
+    end
+    it "returns a valid KDE" do 
+      @result.first.size.should be > 2
+      max = @result.first.max
+      min = @result.first.min
+      (max-min).should be > 0.0
+    end
+  end
 end
-

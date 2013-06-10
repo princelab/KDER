@@ -17,6 +17,7 @@ class Kder
       unless bw # is nil
         bw = Bandwidth.silverman(arr)
       end
+      bw = bw == 0 ? 0.1 : bw
       # Initialization steps
       range = bw*opts[:sigmas]
       min = arr.min - range

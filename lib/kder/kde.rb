@@ -7,7 +7,7 @@ class Kder
   MeshCount = 2e3
   MinimumThresholdValue = 1e-2
   MinimumStepSize = 1e-3
-  DifferenceThreshold = 1e-2
+  DifferenceThreshold = 1e-3
   class << self
     ## 
     # :singleton-method: kde
